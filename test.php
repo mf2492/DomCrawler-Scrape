@@ -9,7 +9,6 @@
 
 
 /*
-Also
 - title: ul.offer_list.popular > li > div.detail > div.description > div.title
 - num-clicked: DEPRECATED: li.num-clicked
 ul.offer_list.popular > li > div.detail > ul.offer_status > li.metadata1.border-right
@@ -38,23 +37,31 @@ $store = "bathandbodyworks";
 $target_url_get = "http://www.retailmenot.com/view/$store.com";
 
 $client = new Client($target_url_get);
-$client->setUserAgent('Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3');
+$user_agent = array("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36",
+	"Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0",
+	"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36",
+	"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/536.30.1 (KHTML, like Gecko) Version/6.0.5 Safari/536.30.1",
+	"Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36", 
+	"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.110 Safari/537.36");
+
+$client->setUserAgent($user_agent[rand(0, 5)]);
 $request = $client->get();
 $response = $request->send();
 $response = $response->getBody();
 
 $html = "<<<'HTML'" . $response . 'HTML';
 
-
 $crawler = new Crawler('', 'http://www.retailmenot.com');
 $crawler->addHtmlContent($html);
 
+//$store_info = array();
+
+$file = $store.".txt";
+$fh = fopen($file, 'w');
+$current = file_get_contents($file);
 
 
-	//$store_info = array();
-
-
-	$selector = 'ul.offer_list.popular > li';
+$selector = 'ul.offer_list.popular > li';
 	
 
 
@@ -72,7 +79,9 @@ $attr_array = array("data-offerid","data-siteid", "data-storename",
 
 for ($i=0; $i<count($attr_array); $i++){
 	$att = $attr_array[$i];
-	getAttributes($att)."\n";
+	$current .= getAttributes($att)."\n";
+	file_put_contents($file, $current);
+
 }
 
 
@@ -90,23 +99,23 @@ for ($i=0; $i<count($stat_array); $i++){
 	echo "\n";
 }
 
-
+   
 function getAttributes($att)
 {
 	global $crawler, $selector;
 
 	$attributes = $crawler->filter($selector)->extract(array($att));
 	$list = implode("\n", $attributes);
-	echo strtoupper($att)."\n";
-	echo $list."\n";
-	echo "\n";
+	$print_out =  strtoupper($att)."\n".$list."\n\n";
+	return $print_out;
+
 }
 
 function getStats($stat)
 {
-	global $crawler, $selector;
+	global $crawler, $selector, $current;
 
-	$nodeValues = $crawler->filter($selector.$stat)->each(function ($node, $i) {
+	$nodeValues = $crawler->filter($selector.$stat)->each(function($node, $i) {
     	echo $node->text();
     	echo "\n";
 	});

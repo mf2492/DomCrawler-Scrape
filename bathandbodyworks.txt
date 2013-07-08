@@ -1,0 +1,105 @@
+DATA-OFFERID
+4775588
+4802775
+4817628
+4035715
+3782950
+4448209
+4844851
+4833218
+4783943
+4792199
+4855224
+4841687
+
+
+DATA-SITEID
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+136719
+
+
+DATA-STORENAME
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+Bath and Body Works
+
+
+DATA-STOREDOMAIN
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+bathandbodyworks.com
+
+
+DATA-TITLESLUG
+up-to-75-percent-off-semi-annual-sale-plus-extra-20-percent-off
+20-percent-off-sitewide
+up-to-75-percent-off-sale-plus-extra-20-percent-off-with-code
+1-pocketbacs-fight-cold-and-flu-season
+5-full-size-sanitizers
+3-for-10-on-mini-body-care
+20-percent-off-25-sitewide-plus-free-gift
+20-percent-off-25-or-more
+select-body-care-for-3-limited-time-only
+free-gift
+free-shipping-over-50
+up-to-75-percent-off-sale-plus-20-percent-off-25-sitewide-plus-free-gift
+
+
+DATA-OFFERID
+4775588
+4802775
+4817628
+4035715
+3782950
+4448209
+4844851
+4833218
+4783943
+4792199
+4855224
+4841687
+
+
+DATA-COUPONID
+
+
+
+2a2mmfrdkj
+27dg5s7kjb
+326rbgpsxi
+
+
+
+
+
+
+
+

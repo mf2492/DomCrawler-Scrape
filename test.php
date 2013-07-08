@@ -32,22 +32,22 @@ use Guzzle\Http\Client;
 
 	
 
-	//CHANGE STORE NAME 	
-	$store = "bathandbodyworks";
+//CHANGE STORE NAME 	
+$store = "bathandbodyworks";
 
-	$target_url_get = "http://www.retailmenot.com/view/$store.com";
+$target_url_get = "http://www.retailmenot.com/view/$store.com";
 
-	$client = new Client($target_url_get);
-	$client->setUserAgent('Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3');
-	$request = $client->get();
-	$response = $request->send();
-	$response = $response->getBody();
+$client = new Client($target_url_get);
+$client->setUserAgent('Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.3 (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3');
+$request = $client->get();
+$response = $request->send();
+$response = $response->getBody();
 
-	$html = "<<<'HTML'" . $response . 'HTML';
+$html = "<<<'HTML'" . $response . 'HTML';
 
 
-	$crawler = new Crawler('', 'http://www.retailmenot.com');
-	$crawler->addHtmlContent($html);
+$crawler = new Crawler('', 'http://www.retailmenot.com');
+$crawler->addHtmlContent($html);
 
 
 
@@ -67,25 +67,28 @@ use Guzzle\Http\Client;
 - titleslug
 */
 
-	$attr_array = array("data-offerid","data-siteid",
-	 "data-storename", "data-storedomain", "data-titleslug", "data-offerid", "data-couponid");
+$attr_array = array("data-offerid","data-siteid", "data-storename",
+ "data-storedomain", "data-titleslug", "data-offerid", "data-couponid");
 
-	for ($i=0; $i<count($attr_array); $i++){
-		$att = $attr_array[$i];
-		getAttributes($att)."\n";
-	}
-
-
-
-$stat_array = array("> div.detail > div.description > div.title", "> div.detail > ul.offer_status > li.metadata1.border-right", 
-	"> div.detail > ul.offer_status > li.metadata2", "> div.voting > div.vote_count", "> div.detail > div.description > div.crux.attachFlash > div.code");
+for ($i=0; $i<count($attr_array); $i++){
+	$att = $attr_array[$i];
+	getAttributes($att)."\n";
+}
 
 
-	for ($i=0; $i<count($stat_array); $i++){
-		$stat = $stat_array[$i];
-		getStats($stat);
-		echo "\n";
-	}
+
+$stat_array = array("> div.detail > div.description > div.title", 
+	"> div.detail > ul.offer_status > li.metadata1.border-right", 
+	"> div.detail > ul.offer_status > li.metadata2", 
+	"> div.voting > div.vote_count", 
+	"> div.detail > div.description > div.crux.attachFlash > div.code");
+
+
+for ($i=0; $i<count($stat_array); $i++){
+	$stat = $stat_array[$i];
+	getStats($stat);
+	echo "\n";
+}
 
 
 function getAttributes($att)
@@ -104,26 +107,10 @@ function getStats($stat)
 	global $crawler, $selector;
 
 	$nodeValues = $crawler->filter($selector.$stat)->each(function ($node, $i) {
-    echo $node->text();
-    echo "\n";
-
-});
+    	echo $node->text();
+    	echo "\n";
+	});
 
 }
-
-/*
-$attributes = $crawler->filter($selector)->extract(array('id'));
-$list = implode("\n", $attributes);
-echo $list;
-
-
-$nodeValues = $crawler->filter('li.num-clicked')->each(function ($node, $i) {
-    print $node->text();
-    echo "\n";
-});
-
-*/
-
-
 
 ?>

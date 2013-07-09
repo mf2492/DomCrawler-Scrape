@@ -1,25 +1,18 @@
 <?php
-// File: src/script.php
-// Author: Michelle Austria
+/* 
+
+File: src/script.php
+Author: Michelle Austria
 
 
-//RetailMeNot changed the name of their classes and divs. This might be aecurity feature 
-//to prevent automatic scraping??
-/*
+Data being scraped: siteID, storename, storedomain, titleslug, offerid/direct link, title,
+number used, last used, rating, coupon code (if available)
 
 
-/*
-- title: ul.offer_list.popular > li > div.detail > div.description > div.title
-- num-clicked: DEPRECATED: li.num-clicked
-ul.offer_list.popular > li > div.detail > ul.offer_status > li.metadata1.border-right
-- last_used: DEPRECATED: li.last_used; 
-  ul.offer_list.popular > li > div.detail > ul.offer_status > li.metadata2
-- vote_count: ul.offer_list.popular > li > div.voting > div.vote_count
-- rating: ul.offer_list.popular > li > div.voting > div.rating.high || div.rating.new > div.percent
-- coupon code: 
-	Direct: ul.offer_list.popular > li > div.detail > div.description > div.crux.attachFlash > div.code
-	
-	Link: data-offerid in li - concatenate with http://www.retailmenot.com/out/<ID>
+NOTE: RetailMeNot changed the name of their classes and divs. This might be aecurity feature 
+to prevent automatic scraping??
+
+
 */
 
 
@@ -65,7 +58,7 @@ $current = file_get_contents($file);
 
 //PARSE ATTRIBUTES
 $base_selector = 'ul.offer_list.popular > li';
-$list = $crawler->filter($base_selector)->extract(array("data-offerid","data-siteid", "data-storename",
+$list = $crawler->filter($base_selector)->extract(array("data-siteid", "data-storename",
  "data-storedomain", "data-titleslug", "data-offerid"));
 
 
@@ -81,6 +74,19 @@ for ($i=0; $i<sizeof($attributes_list); $i++){
 	$attr = $attributes_list[$i];
 	addAttributes($attr);
 }
+
+getLink();
+
+
+
+//print_r($list);
+
+//WRITE TO FILE
+foreach ($list as $fields) {
+    fputcsv($fp, $fields, ",");
+}
+fclose($fp);
+
 
 
 
@@ -102,14 +108,18 @@ function addAttributes($attr){
 	array_pop($list);
 	
 }
-print_r($list);
 
 
+function getLink() {
+	global $list;
 
-//WRITE TO FILE
-foreach ($list as $fields) {
-    fputcsv($fp, $fields, ",");
+	for ($i = 0; $i < (sizeof($list)); $i++) {
+		$list[$i][4] = "http://www.retailmenot.com/out/".$list[$i][4];
+	}
 }
-fclose($fp);
+
+
+
+
 
 ?>

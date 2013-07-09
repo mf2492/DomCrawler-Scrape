@@ -31,8 +31,8 @@ use Guzzle\Http\Client;
 
 	
 
-$store = "walgreens"; //CHANGE STORE NAME 	
-
+//CHANGE STORE NAME 	
+$store = "bathandbodyworks";
 
 $target_url_get = "http://www.retailmenot.com/view/$store.com";
 
@@ -54,8 +54,6 @@ $html = "<<<'HTML'" . $response . 'HTML';
 $crawler = new Crawler('', 'http://www.retailmenot.com');
 $crawler->addHtmlContent($html);
 
-
-
 //PREPARE I/O FILE
 $file = $store.".txt";
 $fp = fopen($file, 'w');
@@ -67,6 +65,9 @@ $current = file_get_contents($file);
 $base_selector = 'ul.offer_list.popular > li';
 $list = $crawler->filter($base_selector)->extract(array("data-offerid","data-siteid", "data-storename",
  "data-storedomain", "data-titleslug", "data-offerid"));
+
+
+
 
 
 $attributes_list = array("> div.detail > div.description > div.title", 
@@ -103,7 +104,6 @@ function addAttributes($attr){
 	
 }
 print_r($list);
-
 
 
 //WRITE TO FILE

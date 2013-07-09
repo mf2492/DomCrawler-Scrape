@@ -1,105 +1,13 @@
-DATA-OFFERID
-4775588
-4802775
-4817628
-4035715
-3782950
-4448209
-4844851
-4833218
-4783943
-4792199
-4855224
-4841687
-
-
-DATA-SITEID
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-136719
-
-
-DATA-STORENAME
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-Bath and Body Works
-
-
-DATA-STOREDOMAIN
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-bathandbodyworks.com
-
-
-DATA-TITLESLUG
-up-to-75-percent-off-semi-annual-sale-plus-extra-20-percent-off
-20-percent-off-sitewide
-up-to-75-percent-off-sale-plus-extra-20-percent-off-with-code
-1-pocketbacs-fight-cold-and-flu-season
-5-full-size-sanitizers
-3-for-10-on-mini-body-care
-20-percent-off-25-sitewide-plus-free-gift
-20-percent-off-25-or-more
-select-body-care-for-3-limited-time-only
-free-gift
-free-shipping-over-50
-up-to-75-percent-off-sale-plus-20-percent-off-25-sitewide-plus-free-gift
-
-
-DATA-OFFERID
-4775588
-4802775
-4817628
-4035715
-3782950
-4448209
-4844851
-4833218
-4783943
-4792199
-4855224
-4841687
-
-
-DATA-COUPONID
-
-
-
-2a2mmfrdkj
-27dg5s7kjb
-326rbgpsxi
-
-
-
-
-
-
-
-
+4858194,136719,"Bath and Body Works",bathandbodyworks.com,today-only-20-percent-off-50-sitewide-plus-free-shipping,4858194,"  Today Only! 20% Off $50 Sitewide + Free Shipping  ","194 people used today","Last used 1 hour ago","4 votes",RMN20FS50
+4858192,136719,"Bath and Body Works",bathandbodyworks.com,20-percent-off-sitewide,4858192,"  20% Off Sitewide  ","72 people used today","Last used 1 hour ago","1 vote",RMNJUL13
+4858193,136719,"Bath and Body Works",bathandbodyworks.com,today-only-free-shipping-on-25,4858193,"  Today Only! Free Shipping On $25  ","51 people used today","Last used 1 hour ago","1 vote",BBWFS25
+4858191,136719,"Bath and Body Works",bathandbodyworks.com,up-to-75-percent-off-sale-items-plus-extra-20-percent-off-sitewide-with-code,4858191,"  Up To 75% Off Sale Items + Extra 20% Off Sitewide With Code  ","68 people used today","Last used 1 hour ago","1 vote",BBWJUL13
+4817628,136719,"Bath and Body Works",bathandbodyworks.com,up-to-75-percent-off-sale-plus-extra-20-percent-off-with-code,4817628,"  Up To 75% Off Sale + Extra 20% off With Code  ","677 people used today","Last used just now","30 votes",RAINBOW13
+3782950,136719,"Bath and Body Works",bathandbodyworks.com,5-full-size-sanitizers,3782950,"  $5 Full Size Sanitizers  Sale ","29 people used today","Last used 1 hour ago","36 votes",S139169
+4035715,136719,"Bath and Body Works",bathandbodyworks.com,1-pocketbacs-fight-cold-and-flu-season,4035715,"  $1 Pocketbacs - Fight Cold & Flu Season  Sale ","51 people used today","Last used just now","68 votes",S138919
+4448209,136719,"Bath and Body Works",bathandbodyworks.com,3-for-10-on-mini-body-care,4448209,"  3 For $10 On Mini Body Care  Sale ","34 people used today","Last used just now","21 votes",S139168
+4844851,136719,"Bath and Body Works",bathandbodyworks.com,20-percent-off-25-sitewide-plus-free-gift,4844851,"  20% Off $25 Sitewide + Free Gift  ","776 people used today","Last used just now","6 votes",S139170
+4783943,136719,"Bath and Body Works",bathandbodyworks.com,select-body-care-for-3-limited-time-only,4783943,"  select body care for $3. limited time only  Sale ","124 people used today","Last used just now","3 votes"
+4792199,136719,"Bath and Body Works",bathandbodyworks.com,free-signature-collection-item-of-your-choice-with-10-purchase,4792199,"  Free Signature Collection Item Of Your Choice With $10 Purchase  ","222 people used today","Last used just now","4 votes"
+4841687,136719,"Bath and Body Works",bathandbodyworks.com,up-to-75-percent-off-sale-plus-20-percent-off-25-sitewide-plus-free-gift,4841687,"  Up To 75% Off Sale + 20% Off $25 Sitewide + Free Gift  ","291 people used today","Last used just now","2 votes"
+4833218,136719,"Bath and Body Works",bathandbodyworks.com,20-percent-off-25-or-more,4833218,"  20% Off $25 Or More  ","163 people used today","Last used just now","3 votes"

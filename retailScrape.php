@@ -24,7 +24,7 @@ use Guzzle\Http\Client;
 
 	
 
-$store = "bathandbodyworks"; //CHANGE STORE NAME 	
+$store = "valueBasket"; //CHANGE STORE NAME 	
 
 
 $target_url_get = "http://www.retailmenot.com/view/$store.com";
@@ -50,7 +50,7 @@ $crawler->addHtmlContent($html);
 
 
 //PREPARE I/O FILE
-$file = $store.".txt";
+$file = $store.".csv";
 $fp = fopen($file, 'w');
 $current = file_get_contents($file);
 
@@ -81,11 +81,11 @@ for ($i=0; $i<sizeof($attributes_list); $i++){
 getLink();
 
 
-print_r($list);
+//print_r($list);
 
 //WRITE TO FILE
 foreach ($list as $fields) {
-    fputcsv($fp, $fields, ",");
+    fputcsv($fp, $fields);
 }
 fclose($fp);
 

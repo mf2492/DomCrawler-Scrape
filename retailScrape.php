@@ -24,7 +24,7 @@ use Guzzle\Http\Client;
 
 	
 
-$store = "walgreens"; //CHANGE STORE NAME 	
+$store = "bathandbodyworks"; //CHANGE STORE NAME 	
 
 
 $target_url_get = "http://www.retailmenot.com/view/$store.com";
@@ -57,16 +57,19 @@ $current = file_get_contents($file);
 
 
 //PARSE ATTRIBUTES
-$base_selector = 'ul.offer_list.popular > li';
-$list = $crawler->filter($base_selector)->extract(array("data-siteid", "data-storename",
+$base_selector = '//ul[@class="offer_list popular"]/li';
+
+$list = $crawler
+	->filterXPath($base_selector)
+	->extract(array("data-siteid", "data-storename",
  "data-storedomain", "data-titleslug", "data-offerid"));
 
-
-$attributes_list = array("> div.detail > div.description > div.title", 
-	"> div.detail > ul.offer_status > li.metadata1.border-right", 
-	"> div.detail > ul.offer_status > li.metadata2", 
-	"> div.voting > div.vote_count", 
-	"> div.detail > div.description > div.crux.attachFlash > div.code");
+$attributes_list = array('/div[@class="detail"]/div[@class="description"]/div[@class="title"]',
+	'/div[@class="detail"]/ul[@class="offer_status"]/li[@class="metadata1 border-right"]',
+	'/div[@class="detail"]/ul[@class="offer_status"]/li[@class="metadata2"]',
+	'/div[@class="voting"]/div[@class="vote_count"]',
+	'/div[@class="detail"]/div[@class="description"]/div[@class="crux attachFlash "]/div[@class="code"]'
+	);
 
 
 
@@ -78,8 +81,7 @@ for ($i=0; $i<sizeof($attributes_list); $i++){
 getLink();
 
 
-
-//print_r($list);
+print_r($list);
 
 //WRITE TO FILE
 foreach ($list as $fields) {
@@ -94,7 +96,9 @@ function addAttributes($attr){
 	global $base_selector, $list, $crawler;
 
 	$selector = $base_selector.$attr;
-	$last_array = $crawler->filter($selector)->extract(array('_text'));
+	$last_array = $crawler
+		->filterXPath($selector)
+		->extract(array('_text'));
 
 
 	//PUSH EACH NODE FROM ARRAY INTO LIST OF ARRAY
@@ -117,9 +121,5 @@ function getLink() {
 		$list[$i][4] = "http://www.retailmenot.com/out/".$list[$i][4];
 	}
 }
-
-
-
-
 
 ?>
